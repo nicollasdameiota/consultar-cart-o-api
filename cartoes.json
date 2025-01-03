@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "nome": "Cartão 1",
+    "descricao": "Descrição do Cartão 1"
+  },
+  {
+    "id": 2,
+    "nome": "Cartão 2",
+    "descricao": "Descrição do Cartão 2"
+  }
+]
+
