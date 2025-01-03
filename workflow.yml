@@ -1,0 +1,14 @@
+name: API
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+      - name: Instalar dependências
+        run: npm install express
+      - name: Iniciar servidor
+        run: node index.js
