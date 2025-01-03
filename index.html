@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consultar Cartão</title>
+</head>
+<body>
+  <h1>Consultar Cartão</h1>
+  <button onclick="consultarCartao()">Consultar</button>
+  <div id="resultado"></div>
+
+  <script>
+    function consultarCartao() {
+      fetch('/cartoes')
+        .then(response => response.json())
+        .then(data => {
+          const resultado = document.getElementById('resultado');
+          resultado.innerHTML = '';
+          data.forEach(cartao => {
+            resultado.innerHTML += `<p>${cartao.nome}: ${cartao.descricao}</p>`;
+          });
+        });
+    }
+  </script>
+</body>
+</html>
