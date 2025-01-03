@@ -1,14 +1,22 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const resultadoDiv = document.getElementById('resultado');
 
-app.use(express.json());
+function consultarCartao() {
+  fetch('cartoes.json')
+    .then(response => response.json())
+    .then(data => {
+      resultadoDiv.innerHTML = '';
+      data.forEach(cartao => {
+        const cartaoHTML = `
+          <p>ID: ${cartao.id}</p>
+          <h2>${cartao.nome}</h2>
+          <p>${cartao.descricao}</p>
+          <hr>
+        `;
+        resultadoDiv.innerHTML += cartaoHTML;
+      });
+    })
+    .catch(erro => console.error('Erro ao carregar cartões:', erro));
+}
 
-app.get('/cartoes', (req, res) => {
-  const cartoes = require('./cartoes.json');
-  res.json(cartoes);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
+// Iniciar consulta ao carregar página
+document.addEventListener('DOMContentLoaded', consultarCartao);
