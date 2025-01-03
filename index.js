@@ -1,7 +1,7 @@
 const resultadoDiv = document.getElementById('resultado');
 
 function consultarCartao() {
-  fetch('cartoes.json')
+  fetch('https://nicollasdameiota.github.io/consultar/cartoes.json')
     .then(response => response.json())
     .then(data => {
       resultadoDiv.innerHTML = '';
