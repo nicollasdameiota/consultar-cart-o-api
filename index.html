@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultar Cartão</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Consultar Cartão</h1>
   <button onclick="consultarCartao()">Consultar</button>
   <div id="resultado"></div>
-
-  <script>
-    function consultarCartao() {
-      fetch('/cartoes')
-        .then(response => response.json())
-        .then(data => {
-          const resultado = document.getElementById('resultado');
-          resultado.innerHTML = '';
-          data.forEach(cartao => {
-            resultado.innerHTML += `<p>${cartao.nome}: ${cartao.descricao}</p>`;
-          });
-        });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
