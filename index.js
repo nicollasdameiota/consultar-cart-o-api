@@ -1,7 +1,7 @@
 const resultadoDiv = document.getElementById('resultado');
 
 function consultarCartao() {
-  fetch('https://nicollasdameiota.github.io/consultar/cartoes.json')
+  fetch('cartoes.json')
     .then(response => response.json())
     .then(data => {
       resultadoDiv.innerHTML = '';
@@ -18,5 +18,4 @@ function consultarCartao() {
     .catch(erro => console.error('Erro ao carregar cartões:', erro));
 }
 
-// Iniciar consulta ao carregar página
 document.addEventListener('DOMContentLoaded', consultarCartao);
